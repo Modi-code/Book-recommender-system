@@ -1,0 +1,31 @@
+.App{
+    background-color: #b6d637;
+    border:none;
+}
+input{
+    border-radius: 15px;
+}
+h1{
+    color: #16190a;
+    text-shadow: #fafcf4 2px 2px 2px;
+}
+.question{
+    border:none;
+    cursor: default;
+}
+label{
+    color:#16190a;
+    width:50%;
+    cursor:pointer;
+    border:2px solid #daf086;
+    border-radius: 7px;
+    padding:4px;
+}
+div .fade-in-elements-true{
+    animation: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+div.fade-in-elements-false{
+    animation: opacity 0.5s ease-in-out;
+    opacity: 1;
+}

@@ -1,0 +1,118 @@
+import react, {Component,useState} from 'react';
+import data from './questions.json'
+import './Books.css'
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            question:data[0].question,
+            option1:data[0].option1,
+            option2:data[0].option2,
+            option3:data[0].option3,
+            option4:data[0].option4,
+            number:data[1].number,
+            check:false,
+            visible:true
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        document.body.style.backgroundColor='#fafcf4'
+    }
+    handleChange = () => {
+        if(this.state.number<=4) {
+            this.setState({
+                check: true,
+                question: data[this.state.number].question,
+                option1: data[this.state.number].option1,
+                option2: data[this.state.number].option2,
+                option3: data[this.state.number].option3,
+                option4: data[this.state.number].option4,
+                number: data[this.state.number].number + 1
+            })
+            setTimeout(() => {
+                    this.setState({check: false})
+                }
+                , 300)
+        }else if(this.state.number===5){
+            this.setState({
+                number:this.state.number+1,
+                visible:false
+            })
+        }else{
+            console.log('daw')
+            this.handleSubmit()
+        }
+    }
+    handleSubmit = () => {
+        document.getElementById("form");
+    }
+    render() {
+        const {question,option1,option2,option3,option4}=this.state;
+        return (
+            <div className='App'>
+                <h1>what book should i read next ?</h1>
+                <fieldset>
+                    <form action='#' method='GET' id='form'>
+                        <div className={`fade-in-elements-${this.state.check}`}>
+                            {this.state.visible && <>
+                                <label className='question'>{question}</label>
+                                <label htmlFor='option-1'>
+                                    <input
+                                        type='checkbox'
+                                        id='option-1'
+                                        checked={this.state.check}
+                                        onClick={() => this.handleChange()}
+
+                                        value='1'
+                                    />
+                                    {option1}
+                                </label>
+                                <label htmlFor='option-2'>
+                                    <input
+                                        type='checkbox'
+                                        id='option-2'
+                                        value='2'
+                                        checked={this.state.check}
+
+                                        onClick={() => {
+                                            this.handleChange()
+                                        }}
+                                    />
+                                    {option2}
+                                </label>
+                                <label htmlFor='option-3'>
+                                    <input
+                                        type='checkbox'
+                                        id='option-3'
+                                        value='2'
+                                        checked={this.state.check}
+
+                                        onClick={() => {
+                                            this.handleChange()
+                                        }}
+                                    />
+                                    {option3}
+                                </label>
+                                <label htmlFor='option-4'>
+                                    <input
+                                        type='checkbox'
+                                        id='option-4'
+                                        value='4'
+                                        checked={this.state.check}
+                                        onClick={() => {
+                                            this.handleChange()
+                                        }}
+                                    />
+                                    {option4}
+                                </label>
+                            </>}
+                        </div>
+                    </form>
+                </fieldset>
+                {!this.state.visible && <label><input type='submit' name='submit'/></label>}
+            </div>
+        )
+    }
+}
+
+export default App

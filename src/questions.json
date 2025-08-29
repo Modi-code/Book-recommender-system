@@ -1,0 +1,17 @@
+[
+  {"question":"What emotion do you want from a book?","option1":"Joy","option2":"Thrill","option3":"Reflection",
+    "option4":"Inspiration", "number": 0
+  },
+  {"question":"What type of book has impacted you most?","option1":"Relatable characters","option2":"Surprising plot","option3":"Challenging ideas",
+    "option4":"Practical knowledge", "number": 1
+  },
+  {"question":"What’s your main hobby?","option1":"Cooking","option2":"Travel","option3":"Science",
+    "option4":"Arts", "number": 2
+  },
+  {"question":"Do you prefer:","option1":"Fiction","option2":"Non-fiction","option3":"Both",
+    "option4":"Graphic novels", "number": 3
+  },
+  {"question":"How do you feel about challenging books?","option1":"Love them","option2":"Prefer easy reads","option3":"Open to them",
+    "option4":"Avoid them", "number": 4
+  }
+]
