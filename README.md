@@ -6,7 +6,8 @@ A dynamic React application that recommends books based on user preferences. Uti
 
 # Tech Stack
 
-React + Vite
+* React
+* Vite
 
 ## How to Use
 ```bash
